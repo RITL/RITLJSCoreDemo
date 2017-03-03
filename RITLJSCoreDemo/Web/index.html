@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+        <meta content="yes" name=" apple-mobile-web-app-capable" />
+        <title>iOS与JS的交互</title>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <style>
+            #warp {background-color: cornflowerblue;height: 100%;width: 100%;margin-top: 80px}
+            #button {background-color: white;}
+        </style>
+    </head>
+    <body>
+        <div id="warp" align="center">
+            <img src="./Default.png" />
+            <p id="test">What do you want to say?</p>
+            <input id="input" value="Default"/>
+            <button id="button" onclick="buttonDidTap()">告诉客户端吧</button>
+            </br></br>
+            <label id="label" style="font-size: 14px;">正在等待客户端回应</label>
+        </div>
+    </body>
+    <script>
+          // 默认为WKWebView
+          var ritl_tyle = "UIWebView";
+          
+          // 确定是webView还是WKWebView
+          function sureType(value){
+              ritl_tyle = value;
+          }
+          
+          // 按钮点击
+          function buttonDidTap (){
+
+            var inputValue = $('#input').val()
+
+            if (ritl_tyle == "UIWebView"){//如果是UIWebView
+                    exportObject.say(inputValue)//通过注入的对象进行通知客户端
+                    alert("执行完毕啦！")
+                 }
+          
+                else if (ritl_tyle == "WKWebView"){//如果是WKWebView
+                    alert("WKWebView");
+                    window.webkit.messageHandlers.ChangedMessage.postMessage(inputValue)
+                }
+          }
+          
+          
+          function iosTellSomething(value){
+                //document.getElementById("label").value = "收到啦";//设置给label
+                $('#label').text(value)
+          }
+        </script>
+</html>
