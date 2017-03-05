@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DB5C49641E68FC6E00A8C42B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C49621E68FC6E00A8C42B /* Default.png */; };
 		DB5C49651E68FC6E00A8C42B /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = DB5C49631E68FC6E00A8C42B /* index.html */; };
-		DB5C49681E691B1F00A8C42B /* RITLExportObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5C49671E691B1F00A8C42B /* RITLExportObject.m */; };
 		DB5C496D1E69612300A8C42B /* RITLSciptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5C496C1E69612300A8C42B /* RITLSciptMessageHandler.swift */; };
 		DBD9BC6E1E67A2B6000902B9 /* RITLJSAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD9BC6D1E67A2B6000902B9 /* RITLJSAppDelegate.swift */; };
 		DBD9BC701E67A2B6000902B9 /* RITLJSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD9BC6F1E67A2B6000902B9 /* RITLJSWebViewController.swift */; };
@@ -17,15 +16,14 @@
 		DBD9BC751E67A2B6000902B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBD9BC741E67A2B6000902B9 /* Assets.xcassets */; };
 		DBD9BC781E67A2B6000902B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD9BC761E67A2B6000902B9 /* LaunchScreen.storyboard */; };
 		DBD9BC811E67A2C8000902B9 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD9BC801E67A2C8000902B9 /* JavaScriptCore.framework */; };
-		DBD9BC871E67F8D6000902B9 /* RITLJSCoreObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD9BC861E67F8D6000902B9 /* RITLJSCoreObject.m */; };
 		DBFAE07A1E6BAAFE00620C7D /* RITLExportSwiftObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFAE0791E6BAAFE00620C7D /* RITLExportSwiftObject.swift */; };
+		DBFAE0801E6BAE7200620C7D /* RITLExportObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFAE07D1E6BAE7200620C7D /* RITLExportObject.m */; };
+		DBFAE0811E6BAE7200620C7D /* RITLJSCoreObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFAE07F1E6BAE7200620C7D /* RITLJSCoreObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DB5C49621E68FC6E00A8C42B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		DB5C49631E68FC6E00A8C42B /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		DB5C49661E691B1F00A8C42B /* RITLExportObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLExportObject.h; sourceTree = "<group>"; };
-		DB5C49671E691B1F00A8C42B /* RITLExportObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLExportObject.m; sourceTree = "<group>"; };
 		DB5C496C1E69612300A8C42B /* RITLSciptMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RITLSciptMessageHandler.swift; sourceTree = "<group>"; };
 		DBD9BC6A1E67A2B6000902B9 /* RITLJSCoreDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RITLJSCoreDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD9BC6D1E67A2B6000902B9 /* RITLJSAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RITLJSAppDelegate.swift; sourceTree = "<group>"; };
@@ -36,9 +34,11 @@
 		DBD9BC791E67A2B6000902B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBD9BC801E67A2C8000902B9 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		DBD9BC841E67F8D5000902B9 /* RITLJSCoreDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RITLJSCoreDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		DBD9BC851E67F8D6000902B9 /* RITLJSCoreObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLJSCoreObject.h; sourceTree = "<group>"; };
-		DBD9BC861E67F8D6000902B9 /* RITLJSCoreObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLJSCoreObject.m; sourceTree = "<group>"; };
 		DBFAE0791E6BAAFE00620C7D /* RITLExportSwiftObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RITLExportSwiftObject.swift; sourceTree = "<group>"; };
+		DBFAE07C1E6BAE7200620C7D /* RITLExportObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLExportObject.h; sourceTree = "<group>"; };
+		DBFAE07D1E6BAE7200620C7D /* RITLExportObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLExportObject.m; sourceTree = "<group>"; };
+		DBFAE07E1E6BAE7200620C7D /* RITLJSCoreObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLJSCoreObject.h; sourceTree = "<group>"; };
+		DBFAE07F1E6BAE7200620C7D /* RITLJSCoreObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLJSCoreObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +82,7 @@
 		DBD9BC6C1E67A2B6000902B9 /* RITLJSCoreDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DBFAE07B1E6BAE7200620C7D /* Objective-C_Object */,
 				DB5C49611E68FC6E00A8C42B /* Web */,
 				DBD9BC6D1E67A2B6000902B9 /* RITLJSAppDelegate.swift */,
 				DBD9BC6F1E67A2B6000902B9 /* RITLJSWebViewController.swift */,
@@ -90,11 +91,7 @@
 				DBD9BC741E67A2B6000902B9 /* Assets.xcassets */,
 				DBD9BC761E67A2B6000902B9 /* LaunchScreen.storyboard */,
 				DBD9BC791E67A2B6000902B9 /* Info.plist */,
-				DBD9BC851E67F8D6000902B9 /* RITLJSCoreObject.h */,
-				DBD9BC861E67F8D6000902B9 /* RITLJSCoreObject.m */,
 				DBD9BC841E67F8D5000902B9 /* RITLJSCoreDemo-Bridging-Header.h */,
-				DB5C49661E691B1F00A8C42B /* RITLExportObject.h */,
-				DB5C49671E691B1F00A8C42B /* RITLExportObject.m */,
 				DBFAE0791E6BAAFE00620C7D /* RITLExportSwiftObject.swift */,
 			);
 			path = RITLJSCoreDemo;
@@ -106,6 +103,17 @@
 				DBD9BC801E67A2C8000902B9 /* JavaScriptCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DBFAE07B1E6BAE7200620C7D /* Objective-C_Object */ = {
+			isa = PBXGroup;
+			children = (
+				DBFAE07C1E6BAE7200620C7D /* RITLExportObject.h */,
+				DBFAE07D1E6BAE7200620C7D /* RITLExportObject.m */,
+				DBFAE07E1E6BAE7200620C7D /* RITLJSCoreObject.h */,
+				DBFAE07F1E6BAE7200620C7D /* RITLJSCoreObject.m */,
+			);
+			path = "Objective-C_Object";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,12 +192,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBD9BC871E67F8D6000902B9 /* RITLJSCoreObject.m in Sources */,
 				DBFAE07A1E6BAAFE00620C7D /* RITLExportSwiftObject.swift in Sources */,
 				DB5C496D1E69612300A8C42B /* RITLSciptMessageHandler.swift in Sources */,
-				DB5C49681E691B1F00A8C42B /* RITLExportObject.m in Sources */,
 				DBD9BC701E67A2B6000902B9 /* RITLJSWebViewController.swift in Sources */,
+				DBFAE0811E6BAE7200620C7D /* RITLJSCoreObject.m in Sources */,
 				DBD9BC6E1E67A2B6000902B9 /* RITLJSAppDelegate.swift in Sources */,
+				DBFAE0801E6BAE7200620C7D /* RITLExportObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
