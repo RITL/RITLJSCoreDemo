@@ -19,6 +19,9 @@
 		DBFAE07A1E6BAAFE00620C7D /* RITLExportSwiftObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFAE0791E6BAAFE00620C7D /* RITLExportSwiftObject.swift */; };
 		DBFAE0801E6BAE7200620C7D /* RITLExportObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFAE07D1E6BAE7200620C7D /* RITLExportObject.m */; };
 		DBFAE0811E6BAE7200620C7D /* RITLJSCoreObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFAE07F1E6BAE7200620C7D /* RITLJSCoreObject.m */; };
+		DBFAE0831E6BD0F400620C7D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = DBFAE0821E6BD0F400620C7D /* README.md */; };
+		DBFAE0871E6BD11D00620C7D /* UIWebView.gif in Resources */ = {isa = PBXBuildFile; fileRef = DBFAE0851E6BD11D00620C7D /* UIWebView.gif */; };
+		DBFAE0881E6BD11D00620C7D /* WKWebView.gif in Resources */ = {isa = PBXBuildFile; fileRef = DBFAE0861E6BD11D00620C7D /* WKWebView.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		DBFAE07D1E6BAE7200620C7D /* RITLExportObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLExportObject.m; sourceTree = "<group>"; };
 		DBFAE07E1E6BAE7200620C7D /* RITLJSCoreObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLJSCoreObject.h; sourceTree = "<group>"; };
 		DBFAE07F1E6BAE7200620C7D /* RITLJSCoreObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLJSCoreObject.m; sourceTree = "<group>"; };
+		DBFAE0821E6BD0F400620C7D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		DBFAE0851E6BD11D00620C7D /* UIWebView.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UIWebView.gif; sourceTree = "<group>"; };
+		DBFAE0861E6BD11D00620C7D /* WKWebView.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WKWebView.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,8 @@
 		DBD9BC6C1E67A2B6000902B9 /* RITLJSCoreDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DBFAE0841E6BD11D00620C7D /* Assets */,
+				DBFAE0821E6BD0F400620C7D /* README.md */,
 				DBFAE07B1E6BAE7200620C7D /* Objective-C_Object */,
 				DB5C49611E68FC6E00A8C42B /* Web */,
 				DBD9BC6D1E67A2B6000902B9 /* RITLJSAppDelegate.swift */,
@@ -114,6 +122,15 @@
 				DBFAE07F1E6BAE7200620C7D /* RITLJSCoreObject.m */,
 			);
 			path = "Objective-C_Object";
+			sourceTree = "<group>";
+		};
+		DBFAE0841E6BD11D00620C7D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DBFAE0851E6BD11D00620C7D /* UIWebView.gif */,
+				DBFAE0861E6BD11D00620C7D /* WKWebView.gif */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,8 +196,10 @@
 			files = (
 				DB5C49651E68FC6E00A8C42B /* index.html in Resources */,
 				DBD9BC781E67A2B6000902B9 /* LaunchScreen.storyboard in Resources */,
+				DBFAE0871E6BD11D00620C7D /* UIWebView.gif in Resources */,
 				DBD9BC751E67A2B6000902B9 /* Assets.xcassets in Resources */,
 				DBD9BC731E67A2B6000902B9 /* Main.storyboard in Resources */,
+				DBFAE0881E6BD11D00620C7D /* WKWebView.gif in Resources */,
 				DB5C49641E68FC6E00A8C42B /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +214,7 @@
 				DBFAE07A1E6BAAFE00620C7D /* RITLExportSwiftObject.swift in Sources */,
 				DB5C496D1E69612300A8C42B /* RITLSciptMessageHandler.swift in Sources */,
 				DBD9BC701E67A2B6000902B9 /* RITLJSWebViewController.swift in Sources */,
+				DBFAE0831E6BD0F400620C7D /* README.md in Sources */,
 				DBFAE0811E6BAE7200620C7D /* RITLJSCoreObject.m in Sources */,
 				DBD9BC6E1E67A2B6000902B9 /* RITLJSAppDelegate.swift in Sources */,
 				DBFAE0801E6BAE7200620C7D /* RITLExportObject.m in Sources */,
