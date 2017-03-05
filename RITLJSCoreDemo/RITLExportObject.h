@@ -11,7 +11,8 @@
 
 
 @protocol RITLJSExport <NSObject,JSExport>
-    
+
+// 类似typedef 将saySomething定义为say,便于JS调用
 JSExportAs(say,
 - (void)saySomething:(NSString *)thing
 );
@@ -27,7 +28,7 @@ JSExportAs(say,
     
 @end
 
-@interface RITLExportObject (RITLJSExport)
+@interface RITLExportObject (RITLJSExport)<RITLJSExport>
     
     
 @end

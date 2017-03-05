@@ -18,6 +18,7 @@
 		DBD9BC781E67A2B6000902B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD9BC761E67A2B6000902B9 /* LaunchScreen.storyboard */; };
 		DBD9BC811E67A2C8000902B9 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD9BC801E67A2C8000902B9 /* JavaScriptCore.framework */; };
 		DBD9BC871E67F8D6000902B9 /* RITLJSCoreObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD9BC861E67F8D6000902B9 /* RITLJSCoreObject.m */; };
+		DBFAE07A1E6BAAFE00620C7D /* RITLExportSwiftObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFAE0791E6BAAFE00620C7D /* RITLExportSwiftObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		DBD9BC841E67F8D5000902B9 /* RITLJSCoreDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RITLJSCoreDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		DBD9BC851E67F8D6000902B9 /* RITLJSCoreObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLJSCoreObject.h; sourceTree = "<group>"; };
 		DBD9BC861E67F8D6000902B9 /* RITLJSCoreObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLJSCoreObject.m; sourceTree = "<group>"; };
+		DBFAE0791E6BAAFE00620C7D /* RITLExportSwiftObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RITLExportSwiftObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				DBD9BC841E67F8D5000902B9 /* RITLJSCoreDemo-Bridging-Header.h */,
 				DB5C49661E691B1F00A8C42B /* RITLExportObject.h */,
 				DB5C49671E691B1F00A8C42B /* RITLExportObject.m */,
+				DBFAE0791E6BAAFE00620C7D /* RITLExportSwiftObject.swift */,
 			);
 			path = RITLJSCoreDemo;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBD9BC871E67F8D6000902B9 /* RITLJSCoreObject.m in Sources */,
+				DBFAE07A1E6BAAFE00620C7D /* RITLExportSwiftObject.swift in Sources */,
 				DB5C496D1E69612300A8C42B /* RITLSciptMessageHandler.swift in Sources */,
 				DB5C49681E691B1F00A8C42B /* RITLExportObject.m in Sources */,
 				DBD9BC701E67A2B6000902B9 /* RITLJSWebViewController.swift in Sources */,

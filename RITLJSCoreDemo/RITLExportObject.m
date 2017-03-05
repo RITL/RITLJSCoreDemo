@@ -12,7 +12,7 @@
     
 -(void)registerSelfToContext:(JSContext *)context
 {
-    context[@"exportObject"] = self;
+    context[@"RITLExportObject"] = self;
 }
     
 @end

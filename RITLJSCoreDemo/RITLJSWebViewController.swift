@@ -11,10 +11,7 @@ import JavaScriptCore
 import WebKit
 
 // 设置为true表示使用WKWebView，false表示使用UIWebView
-let ritl_useWkWebView = true
-
-
-
+let ritl_useWkWebView = false
 
 class RITLJSWebViewController: UIViewController {
     
@@ -96,6 +93,15 @@ class RITLJSWebViewController: UIViewController {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // MARK: JSContext/JSValue
     func __testValueInContext(){
         
@@ -168,6 +174,18 @@ class RITLJSWebViewController: UIViewController {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // MARK: JavaScript use iOS with Swift   ---  Failture
     func __textJavaScriptUseSwift(){
         
@@ -196,6 +214,10 @@ class RITLJSWebViewController: UIViewController {
     
     
     
+    
+    
+    
+    
     // MARK: JavaScript use iOS with ObjC   --- Success
     func __textJavaScriptUseObjc(){
         
@@ -206,13 +228,22 @@ class RITLJSWebViewController: UIViewController {
     }
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // MARK: UIWebView
     func __loadUIWebView(_ request:URLRequest) {
         
         view.addSubview(webView)
-        
-        
-        
         webView.loadRequest(request)
     }
     
@@ -221,13 +252,19 @@ class RITLJSWebViewController: UIViewController {
     func __loadWKWebView(_ request:URLRequest){
         
         view.addSubview(wkWebView)
-        
-        
-        
         wkWebView.load(request)
     }
     
 }
+
+
+
+
+
+
+
+
+
 
 
 // MARK: UIWebView-Delegate 系列
@@ -241,22 +278,47 @@ extension RITLJSWebViewController : UIWebViewDelegate {
         }
         
         //告诉web，这里是UIWebView
-        context.evaluateScript("sureType('UIWebView')")
+        webView.stringByEvaluatingJavaScript(from: "sureType('UIWebView')")
         
+        
+        /* 使用的ObjC的Export对象 */
         //初始化一个Export对象
         let exportObject = RITLExportObject()
         
         exportObject.dosomething = { [weak self](value) in
             
+            guard let value = value else { return }
+            
+            //设置导航栏
             self?.navigationItem.title = value
             
-            //回应
-            
+            //执行js告知，修改导航栏完毕
+            webView.stringByEvaluatingJavaScript(from: "iosTellSomething('已将\(value)设置成导航Title')")//回应
         }
         
         exportObject.registerSelf(to: context)
+
         
-        let i = 0
+        
+        
+        /* 使用Swift的Export对象  依旧不能响应...*/
+        /*
+        let exportObject = RITLExportSwiftObject()
+        
+        exportObject.doSomething = { [weak self](value) in
+            
+            guard let value = value else { return }
+            
+            //设置导航栏
+            self?.navigationItem.title = value
+            
+            //执行js告知，修改导航栏完毕
+            webView.stringByEvaluatingJavaScript(from: "iosTellSomething('已将\(value)设置成导航Title')")//回应
+        }
+        
+        context.setObject(exportObject, forKeyedSubscript: "RITLExportObject" as (NSCopying & NSObjectProtocol)!)
+         */
+        
     }
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error)
@@ -264,6 +326,20 @@ extension RITLJSWebViewController : UIWebViewDelegate {
         print("error = \(error.localizedDescription)")
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

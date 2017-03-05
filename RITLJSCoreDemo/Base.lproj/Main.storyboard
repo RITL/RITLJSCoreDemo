@@ -36,7 +36,19 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JavaScriptCore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAJ-rL-82c">
+                                <rect key="frame" x="128.5" y="323" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.77771126327287099" green="0.87749487387357417" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jAJ-rL-82c" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="M72-wY-osD"/>
+                            <constraint firstItem="jAJ-rL-82c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vfl-Ys-7sq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4bU-hv-Ay0">
                         <barButtonItem key="rightBarButtonItem" title="Let's go" id="FJ9-Oz-3qN">
