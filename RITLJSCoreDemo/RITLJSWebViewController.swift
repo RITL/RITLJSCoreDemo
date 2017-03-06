@@ -72,7 +72,6 @@ class RITLJSWebViewController: UIViewController {
             
             __loadUIWebView(request)
         }
-        
     }
 
     
