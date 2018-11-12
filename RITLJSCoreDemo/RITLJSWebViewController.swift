@@ -125,7 +125,7 @@ class RITLJSWebViewController: UIViewController {
         let returnValue = context?.evaluateScript("triple(3)") //因为有返回值，需要接收一下
         
         //打印结果:returnValue = Optional(6)
-        print("__testValueInContext --- returnValue = \(returnValue?.toNumber())")
+        print("__testValueInContext --- returnValue = \(String(describing: returnValue?.toNumber()))")
         
         
         
@@ -142,7 +142,7 @@ class RITLJSWebViewController: UIViewController {
         let firstName = names?.objectAtIndexedSubscript(0) //Yue
         
         //打印结果:names = Optional([Yue, Xiao, Wen])
-        print("__testValueInContext --- names = \(names?.toArray())\nfirstName = \(firstName)")
+        print("__testValueInContext --- names = \(String(describing: names?.toArray()))\nfirstName = \(String(describing: firstName))")
         
         
         
@@ -153,14 +153,14 @@ class RITLJSWebViewController: UIViewController {
         let result = function?.call(withArguments: [3])
         
         //打印结果:context-function's result = Optional(6)
-        print("__testValueInContext --- context-function's result = \(result?.toNumber())")
+        print("__testValueInContext --- context-function's result = \(String(describing: result?.toNumber()))")
         
         
         /// 捕获JS运行错误
         context?.exceptionHandler = {(context,exception) in
             
             //打印错误
-            print("__testValueInContext --- JS error = \(exception)\n")
+            print("__testValueInContext --- JS error = \(String(describing: exception))\n")
         }
         
         
@@ -208,7 +208,7 @@ class RITLJSWebViewController: UIViewController {
         let result = context?.evaluateScript("stringHandler('Hello')")
         
         // 结果：undefined - - 很无解有没有！！！！
-        print("I am Swift ,result = \(result?.toString())\n")
+        print("I am Swift ,result = \(String(describing: result?.toString()))\n")
     }
     
     
@@ -222,7 +222,7 @@ class RITLJSWebViewController: UIViewController {
         
         let result = RITLJSCoreObject.textJavaScriptUseiOS(inObjC: "Hello")
         
-        print("I am Objc, result = \(result?.toString())\n")
+        print("I am Objc, result = \(String(describing: result?.toString()))\n")
         
     }
     
@@ -356,7 +356,7 @@ extension RITLJSWebViewController : WKScriptMessageHandler {
         //执行通知HTML
         wkWebView.evaluateJavaScript("iosTellSomething('已将\(body)设置成导航Title')") { (_, error) in
             
-            print("error = \(error?.localizedDescription)")
+            print("error = \(String(describing: error?.localizedDescription))")
         }
     }
 }
