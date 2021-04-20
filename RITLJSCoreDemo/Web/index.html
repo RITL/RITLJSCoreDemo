@@ -7,9 +7,10 @@
         <title>iOS与JS的交互</title>
         <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
         <style>
-            #warp {background-color: cornflowerblue;height: 100%;width: 100%;margin-top: 80px}
-            #button {background-color: white;height: 50px;}
-            #input {height: 50px;}
+            html, body { background-color:cornflowerblue; }
+            #warp { height:100%; width:100%; margin-top:80px;}
+            #button { background-color:white; height:44px}
+            #input { height: 44px; }
         </style>
     </head>
     <body>
@@ -25,12 +26,10 @@
     <script>
           // 默认为WKWebView
           var ritl_tyle = "WKWebView";
-          
           // 确定是webView还是WKWebView
-          function sureType(value){
-              ritl_tyle = value;
+          function sureType(value){ 
+              ritl_tyle = value; 
           };
-    
     
           // 按钮点击
           function buttonDidTap (){
@@ -38,16 +37,14 @@
             var inputValue = $('#input').val()
 
             if (ritl_tyle == "UIWebView"){//如果是UIWebView
-                    RITLExportObject.say(inputValue)//通过注入的对象进行通知客户端
-                 }
-          
-                else if (ritl_tyle == "WKWebView"){//如果是WKWebView
-                    alert("WKWebView");
-                    window.webkit.messageHandlers.ChangedMessage.postMessage(inputValue);
-                }
+                
+                RITLExportObject.say(inputValue)//通过注入的对象进行通知客户端
+                
+            }
+            else if (ritl_tyle == "WKWebView"){//如果是WKWebView
+                window.webkit.messageHandlers.ChangedMessage.postMessage(inputValue);
+            }
           };
-    
-    
           
           function iosTellSomething(value){
                 //document.getElementById("label").value = "收到啦";//设置给label

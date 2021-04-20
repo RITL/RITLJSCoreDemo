@@ -50,7 +50,7 @@ class RITLJSWebViewController: UIViewController {
         // 通过contenxt运行javaScript
         __testValueInContext()
         
-        // Swift-javaScript使用iOS客户端的代码 - 目前貌似不支持Swift
+        // Swift-javaScript使用iOS客户端的代码
         __textJavaScriptUseSwift()
         
         // ObjC - javaScript使用iOS客户端的代码
@@ -91,25 +91,13 @@ class RITLJSWebViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     // MARK: JSContext/JSValue
     func __testValueInContext(){
-        
         /**
          该方法的作用:个人感觉就是通过初始化JSContext对象，获得运行javaScript的环境.
          在此就可以运行常用的js代码（可以把JSContext当做一个游览器环境，在此运行js脚本）
-         */
-        
-        
+        */
+
         let context = JSContext()
 
         //编写javaScript代码
@@ -145,7 +133,6 @@ class RITLJSWebViewController: UIViewController {
         print("__testValueInContext --- names = \(String(describing: names?.toArray()))\nfirstName = \(String(describing: firstName))")
         
         
-        
         /// 获得context创建的函数变量
         let function = context?.objectForKeyedSubscript("triple")
         
@@ -158,7 +145,6 @@ class RITLJSWebViewController: UIViewController {
         
         /// 捕获JS运行错误
         context?.exceptionHandler = {(context,exception) in
-            
             //打印错误
             print("__testValueInContext --- JS error = \(String(describing: exception))\n")
         }
@@ -172,26 +158,16 @@ class RITLJSWebViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // MARK: JavaScript use iOS with Swift   ---  Failture
+    // MARK: JavaScript use iOS with Swift   ---  Success
     func __textJavaScriptUseSwift(){
         
         let context = JSContext()
         
-        //初始化一个闭包
-        let stringHandler : (String) -> String = { (value) in
+        //初始化一个闭包 @convention(block) 将swift的closure与ObjC中的block结构并不相同
+        /**
+         This method is the same as perform(_:) except that you can supply an argument for aSelector. aSelector should identify a method that takes a single argument of type id.id is a pointer to an objective-c object. From Swift, you are going to be limited to passing objects that inherit from NSObject. A closure does not meet those requirements.
+         */
+        let stringHandler : @convention(block) (String) -> String = { (value) in
             
             var value = value
             
@@ -207,14 +183,9 @@ class RITLJSWebViewController: UIViewController {
         
         let result = context?.evaluateScript("stringHandler('Hello')")
         
-        // 结果：undefined - - 很无解有没有！！！！
+        // I am Swift ,result = Optional("Hello I am appending word with closure!")
         print("I am Swift ,result = \(String(describing: result?.toString()))\n")
     }
-    
-    
-    
-    
-    
     
     
     // MARK: JavaScript use iOS with ObjC   --- Success
@@ -225,19 +196,7 @@ class RITLJSWebViewController: UIViewController {
         print("I am Objc, result = \(String(describing: result?.toString()))\n")
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     // MARK: UIWebView
     func __loadUIWebView(_ request:URLRequest) {
@@ -253,7 +212,6 @@ class RITLJSWebViewController: UIViewController {
         view.addSubview(wkWebView)
         wkWebView.load(request)
     }
-    
 }
 
 
@@ -272,9 +230,11 @@ extension RITLJSWebViewController : UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         
         //获得JSContent对象
-        guard  let context : JSContext = webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext? else {
+        guard let context : JSContext = webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext? else {
             return
         }
+        
+
         
         //告诉web，这里是UIWebView
         webView.stringByEvaluatingJavaScript(from: "sureType('UIWebView')")
@@ -282,42 +242,42 @@ extension RITLJSWebViewController : UIWebViewDelegate {
         
         /* 使用的ObjC的Export对象 */
         //初始化一个Export对象
-        let exportObject = RITLExportObject()
-        
-        exportObject.dosomething = { [weak self](value) in
-            
-            guard let value = value else { return }
-            
-            //设置导航栏
-            self?.navigationItem.title = value
-            
-            //执行js告知，修改导航栏完毕
-            webView.stringByEvaluatingJavaScript(from: "iosTellSomething('已将\(value)设置成导航Title')")//回应
-        }
-        
-        exportObject.registerSelf(to: context)
+//        let exportObject = RITLExportObject()
+//
+//        exportObject.dosomething = { [weak self](value) in
+//            guard let value = value else { return }
+//            DispatchQueue.main.async {
+//                //设置导航栏
+//                self?.navigationItem.title = value
+//
+//                //执行js告知，修改导航栏完毕
+//                webView.stringByEvaluatingJavaScript(from: "iosTellSomething('已将\(value)设置成导航Title')")//回应
+//            }
+//        }
+//
+//        exportObject.registerSelf(to: context)
 
         
         
         
         /* 使用Swift的Export对象  依旧不能响应...*/
-        /*
+        /* 使用Swift的Export对象  2021-04-20 ...*/
         let exportObject = RITLExportSwiftObject()
         
-        exportObject.doSomething = { [weak self](value) in
-            
+        exportObject.doSomething =  { [weak self](value) in
             guard let value = value else { return }
-            
-            //设置导航栏
-            self?.navigationItem.title = value
-            
-            //执行js告知，修改导航栏完毕
-            webView.stringByEvaluatingJavaScript(from: "iosTellSomething('已将\(value)设置成导航Title')")//回应
+            DispatchQueue.main.async {
+                //设置导航栏
+                self?.navigationItem.title = value
+                
+                //执行js告知，修改导航栏完毕
+                webView.stringByEvaluatingJavaScript(from: "iosTellSomething('已将\(value)设置成导航Title')")//回应
+            }
         }
         
-        context.setObject(exportObject, forKeyedSubscript: "RITLExportObject" as (NSCopying & NSObjectProtocol)!)
-         */
+//        exportObject.say(123)
         
+        context.setObject(exportObject, forKeyedSubscript: "RITLExportObject" as NSString)
     }
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error)

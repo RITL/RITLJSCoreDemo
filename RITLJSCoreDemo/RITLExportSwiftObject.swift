@@ -8,17 +8,18 @@
 
 import UIKit
 
-protocol RITLJSSwiftExport {
+@objc protocol RITLJSSwiftExport: JSExport {
     
-    func saySomething(something:String)
+    func say(_ something: String)
+    
+    func test(t: String) -> String
 }
 
 
 
-class RITLExportSwiftObject: NSObject {
+@objc class RITLExportSwiftObject: NSObject {
 
     var doSomething: ((String?) -> Void)?
-    
     override init() {
         super.init()
     }
@@ -28,8 +29,14 @@ class RITLExportSwiftObject: NSObject {
 
 extension RITLExportSwiftObject : RITLJSSwiftExport {
     
-    func saySomething(something: String) {
-        
+    
+    
+    func say(_ something: String) {
         doSomething?(something)
     }
+    
+    func test(t: String) -> String {
+        return t
+    }
+    
 }
